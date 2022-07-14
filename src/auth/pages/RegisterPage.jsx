@@ -19,12 +19,11 @@ const formValidations = {
 };
 
 export const RegisterPage = () => {
-  
   const dispatch = useDispatch();
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const { status, errorMessage } = useSelector(state => state.auth);
-  
+
   const isCheckingAuthentication = useMemo(() => status === 'checking',[status]);
 
   const {
@@ -51,8 +50,8 @@ export const RegisterPage = () => {
   return (
     <AuthLayout title='Crear cuenta'>
       <form
-        onSubmit={onSubmit}
         className='animate__animated animate__fadeIn animate__faster'
+        onSubmit={onSubmit}
       >
         <Grid container>
           <Grid item xs={12} sx={{ mt: 2 }}>
